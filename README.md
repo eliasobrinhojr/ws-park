@@ -11,6 +11,11 @@
 - Executar o comando Maven "mvn spring-boot:run" na raíz do projeto
 
 
-Acesso a API da aplicação através do Swagger
+# Acesso a API da aplicação através do Swagger
 http://localhost:7001/ws-park/api/swagger-ui.html
+
+# Acesso ao banco H2
+http://localhost:7001/ws-park/api/h2-console
+
+
 
