@@ -10,8 +10,6 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.parking.exception.BOException;
-
 import br.com.eliasjr.itriad.wspark.calculo.CalculoPreco;
 import br.com.eliasjr.itriad.wspark.calculo.RegraFDS;
 import br.com.eliasjr.itriad.wspark.calculo.RegraSemanaManha;
@@ -65,10 +63,10 @@ public class RegistroService {
 
 	public Double verificaValorAPagar(String placa) {
 		Registro registro = registroRepository.findRegistroWithActiveVeiculoByPlaca(placa);
-		
-		if(registro == null)
-			 throw new GException("Registro saida inexistente.", new Throwable("Registration.notfound"));
-		
+
+		if (registro == null)
+			throw new GException("Registro saida inexistente.", new Throwable("Registration.notfound"));
+
 		return calculaValorAPagar(registro);
 	}
 
