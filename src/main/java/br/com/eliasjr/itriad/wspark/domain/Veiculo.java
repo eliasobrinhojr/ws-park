@@ -9,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import br.com.eliasjr.itriad.wspark.dto.VeiculoDTO;
+
 @Entity
 @Table(name = "veiculo")
 public class Veiculo implements Serializable {
@@ -29,6 +31,16 @@ public class Veiculo implements Serializable {
 	private String cor;
 
 	public Veiculo() {
+	}
+
+	public Veiculo(VeiculoDTO dto) {
+		if (dto.getId() != null) {
+			setId(dto.getId());
+		}
+
+		this.modelo = dto.getModelo();
+		this.placa = dto.getPlaca();
+		this.cor = dto.getCor();
 	}
 
 	public long getId() {
@@ -62,7 +74,5 @@ public class Veiculo implements Serializable {
 	public void setCor(String cor) {
 		this.cor = cor;
 	}
-	
-	
 
 }
